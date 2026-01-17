@@ -1,0 +1,22 @@
+[{
+  "professionalName": "Antony Ochieng",
+  "nameLink": {
+    "firstName": "Antony",
+    "url": "https://ochieng-antony.netlify.app"
+  },
+  "base64Image": "",
+  "firstName": "Antony",
+  "primaryDescription": " is a student at BYU-Idaho",
+  "workDescription1": "He is a software developer.",
+  "workDescription2": "He enjoys learning programming and web development.",
+  "linkTitleText": "Check out his work below",
+  "linkedInLink": {
+    "link": "https://www.linkedin.com/in/antony-ochieng/",
+    "text": "LinkedIn"
+  },
+  "githubLink": {
+    "link": "https://github.com/TonyReignsT/",
+    "text": "GitHub"
+  },
+  "contactText": "Feel free to contact him at aochieng@byupathway.edu if you'd like for him to work for you!"
+}]

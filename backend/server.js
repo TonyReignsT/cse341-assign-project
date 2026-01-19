@@ -6,8 +6,7 @@ const {connectDB} = require("./modules/db");
 const profRoutes = require('./routes/profRoute')
 
 const app = express();
-// const PORT = process.env.PORT || 8000;
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 app.use(cors());
 app.use(express.json());

@@ -28,7 +28,7 @@ let _db = null;
 let _client = null;
 
 const connectDB = async () => {
-    // If already connected → just return existing connection
+    // If already connected  return existing connection
     if (_db) {
         console.log('Using existing MongoDB connection');
         return _db;
@@ -49,8 +49,6 @@ const connectDB = async () => {
 
         await _client.connect();
         _db = _client.db("professional_db"); // Uses database name from connection string
-        // If you want to be explicit about database name:
-        // _db = _client.db('your-database-name-here');
 
         console.log('MongoDB connected successfully!');
 
@@ -61,11 +59,10 @@ const connectDB = async () => {
     }
 };
 
-/**
- * Returns the connected database instance
- * Must be called after connectDB() has succeeded
- */
-const getDb = () => {
+
+ // Returns the connected database instance
+ // called after connectDB() has succeeded
+const  begetDb = () => {
     if (!_db) {
         throw new Error(
             'Database not initialized. Please call connectDB() first.'
@@ -74,7 +71,7 @@ const getDb = () => {
     return _db;
 };
 
-// Close connection (useful for tests or graceful shutdown)
+// Close connection
 const closeDb = async () => {
     if (_client) {
         await _client.close();

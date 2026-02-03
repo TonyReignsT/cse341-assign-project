@@ -1,0 +1,32 @@
+### Get all contacts
+GET http://localhost:8080/contacts
+
+### Get contact by ID
+GET http://localhost:8080/contacts/PUT_REAL_ID_HERE
+
+### Create contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@email.com",
+  "favoriteColor": "Red",
+  "birthday": "1999-02-02"
+}
+
+### Update contact
+PUT http://localhost:8080/contacts/PUT_REAL_ID_HERE
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Updated",
+  "email": "john@email.com",
+  "favoriteColor": "Green",
+  "birthday": "1999-02-02"
+}
+
+### Delete contact
+DELETE http://localhost:8080/contacts/PUT_REAL_ID_HERE

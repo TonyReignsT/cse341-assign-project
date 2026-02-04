@@ -4,8 +4,8 @@ require("dotenv").config();
 const {connectDB} = require("./modules/db");
 const contactsRoutes = require('./routes/contactsRoute')
 // swagger
-const swaggerUi = require("swagger-ui-express");
-const swaggerSpec = require("./swagger/swagger");
+// const swaggerUi = require("swagger-ui-express");
+const {swaggerUi, swaggerSpec} = require("./swagger/swagger");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -13,7 +13,10 @@ const PORT = process.env.PORT || 8000;
 app.use(cors());
 app.use(express.json());
 
+// swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+
 // Routes
 app.use("/", contactsRoutes);
 

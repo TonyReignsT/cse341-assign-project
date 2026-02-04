@@ -17,9 +17,9 @@ const contactsController = require('../controllers/contactsController');
  *         - favoriteColor
  *         - birthday
  *       properties:
- *         contactId:
- *           type: integer
- *           example: 1
+ *         _id:
+ *           type: string 
+ *           example: 65f1c2a9a3e3b123456789ab
  *         firstName:
  *           type: string
  *           example: John
@@ -66,7 +66,7 @@ const contactsController = require('../controllers/contactsController');
  *         name: id
  *         required: true
  *         schema:
- *           type: integer
+ *           type: string 
  *     responses:
  *       200:
  *         description: Contact found
@@ -90,6 +90,73 @@ const contactsController = require('../controllers/contactsController');
  *       201:
  *         description: Contact created
  */
+
+// PUT - Update
+/**
+ * @swagger
+ * /contacts/{id}:
+ *   put:
+ *     summary: Update a contact by ID
+ *     description: Update an existing contact in the database using its ID
+ *     tags:
+ *       - Contacts
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: The contact ID
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               firstName:
+ *                 type: string
+ *               lastName:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               favoriteColor:
+ *                 type: string
+ *               birthday:
+ *                 type: string
+ *                 format: date
+ *     responses:
+ *       200:
+ *         description: Contact updated successfully
+ *       400:
+ *         description: Invalid input
+ *       404:
+ *         description: Contact not found
+ */
+
+// DELETE Contact
+/**
+ * @swagger
+ * /contacts/{id}:
+ *   delete:
+ *     summary: Delete a contact by ID
+ *     description: Remove a contact from the database using its ID
+ *     tags:
+ *       - Contacts
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: The contact ID
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Contact deleted successfully
+ *       404:
+ *         description: Contact not found
+ */
+
 
 
 router.get('/contacts', contactsController.getAllContacts);
